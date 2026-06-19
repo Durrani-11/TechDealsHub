@@ -7,7 +7,6 @@
     <meta name="description" content="Find the best tech deals, compare prices on laptops, phones, gadgets, and accessories. Daily updated deals from top retailers.">
     <meta name="keywords" content="tech deals, price comparison, best laptop deals, phone deals, gadget discounts">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -18,7 +17,6 @@
         }
         .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
 
-        /* Header */
         .top-bar {
             background: linear-gradient(90deg, #6366f1, #8b5cf6, #a855f7);
             padding: 8px;
@@ -51,35 +49,6 @@
         }
         .logo span { color: #fbbf24; -webkit-text-fill-color: #fbbf24; }
 
-        .search-box {
-            flex: 1;
-            max-width: 500px;
-            position: relative;
-        }
-        .search-box input {
-            width: 100%;
-            padding: 12px 45px 12px 20px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.05);
-            color: #fff;
-            font-size: 0.95rem;
-            outline: none;
-            transition: all 0.3s;
-        }
-        .search-box input:focus {
-            border-color: #6366f1;
-            background: rgba(255,255,255,0.08);
-        }
-        .search-box i {
-            position: absolute;
-            right: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #64748b;
-        }
-
-        /* Ad Banner */
         .ad-banner {
             background: rgba(255,255,255,0.02);
             border: 1px dashed rgba(255,255,255,0.08);
@@ -95,7 +64,6 @@
             font-size: 0.9rem;
         }
 
-        /* Hero */
         .hero {
             padding: 60px 20px;
             text-align: center;
@@ -125,54 +93,11 @@
             margin-top: 30px;
             flex-wrap: wrap;
         }
-        .stat {
-            text-align: center;
-        }
-        .stat .number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #6366f1;
-        }
-        .stat .label {
-            color: #64748b;
-            font-size: 0.85rem;
-            margin-top: 5px;
-        }
+        .stat { text-align: center; }
+        .stat .number { font-size: 2rem; font-weight: 800; color: #6366f1; }
+        .stat .label { color: #64748b; font-size: 0.85rem; margin-top: 5px; }
 
-        /* Categories */
-        .categories {
-            padding: 20px 0;
-        }
-        .cat-scroll {
-            display: flex;
-            gap: 12px;
-            overflow-x: auto;
-            padding: 10px 0;
-            scrollbar-width: none;
-        }
-        .cat-scroll::-webkit-scrollbar { display: none; }
-        .cat-btn {
-            padding: 10px 24px;
-            border-radius: 25px;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.03);
-            color: #94a3b8;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        .cat-btn:hover, .cat-btn.active {
-            background: linear-gradient(90deg, #6366f1, #8b5cf6);
-            color: #fff;
-            border-color: transparent;
-        }
-
-        /* Products Grid */
-        .products-section {
-            padding: 30px 0 60px;
-        }
+        .products-section { padding: 30px 0 60px; }
         .section-header {
             display: flex;
             justify-content: space-between;
@@ -181,18 +106,7 @@
             flex-wrap: wrap;
             gap: 15px;
         }
-        .section-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        .sort-select {
-            padding: 8px 16px;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.05);
-            color: #e2e8f0;
-            cursor: pointer;
-        }
+        .section-header h2 { font-size: 1.5rem; font-weight: 700; }
 
         .products-grid {
             display: grid;
@@ -206,7 +120,9 @@
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.05);
             transition: all 0.3s;
-            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
         .product-card:hover {
             transform: translateY(-5px);
@@ -219,7 +135,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 5rem;
             position: relative;
         }
         .discount-badge {
@@ -231,6 +147,7 @@
             border-radius: 8px;
             font-weight: 700;
             font-size: 0.85rem;
+            color: #fff;
         }
         .product-info { padding: 20px; }
         .product-category {
@@ -246,6 +163,7 @@
             font-weight: 600;
             margin-bottom: 10px;
             line-height: 1.4;
+            color: #e2e8f0;
         }
         .product-meta {
             display: flex;
@@ -253,10 +171,7 @@
             gap: 10px;
             margin-bottom: 15px;
         }
-        .rating {
-            color: #fbbf24;
-            font-size: 0.9rem;
-        }
+        .rating { color: #fbbf24; font-size: 0.9rem; }
         .reviews { color: #64748b; font-size: 0.85rem; }
         .price-row {
             display: flex;
@@ -264,16 +179,8 @@
             gap: 10px;
             margin-bottom: 15px;
         }
-        .current-price {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #22c55e;
-        }
-        .original-price {
-            color: #64748b;
-            text-decoration: line-through;
-            font-size: 1rem;
-        }
+        .current-price { font-size: 1.5rem; font-weight: 800; color: #22c55e; }
+        .original-price { color: #64748b; text-decoration: line-through; font-size: 1rem; }
         .savings {
             background: rgba(34,197,94,0.15);
             color: #22c55e;
@@ -306,13 +213,14 @@
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s;
+            text-align: center;
+            display: block;
         }
         .buy-btn:hover {
             transform: scale(1.02);
             box-shadow: 0 5px 20px rgba(99,102,241,0.4);
         }
 
-        /* Newsletter */
         .newsletter {
             background: linear-gradient(135deg, #1e1b4b, #312e81);
             border-radius: 20px;
@@ -320,14 +228,8 @@
             text-align: center;
             margin: 40px 0;
         }
-        .newsletter h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-        .newsletter p {
-            color: #94a3b8;
-            margin-bottom: 25px;
-        }
+        .newsletter h3 { font-size: 1.8rem; margin-bottom: 10px; }
+        .newsletter p { color: #94a3b8; margin-bottom: 25px; }
         .newsletter-form {
             display: flex;
             gap: 10px;
@@ -355,11 +257,8 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-        .newsletter-form button:hover {
-            transform: scale(1.05);
-        }
+        .newsletter-form button:hover { transform: scale(1.05); }
 
-        /* Footer */
         footer {
             border-top: 1px solid rgba(255,255,255,0.05);
             padding: 40px 20px;
@@ -376,11 +275,8 @@
         footer a { color: #94a3b8; text-decoration: none; transition: color 0.3s; }
         footer a:hover { color: #6366f1; }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .header-content { flex-direction: column; }
-            .search-box { max-width: 100%; width: 100%; }
             .products-grid { grid-template-columns: 1fr; }
             .newsletter-form { flex-direction: column; }
         }
@@ -393,10 +289,6 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">TechDeals<span>Hub</span></div>
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search laptops, phones, gadgets...">
-                    <i class="fas fa-search"></i>
-                </div>
             </div>
         </div>
     </header>
@@ -412,15 +304,15 @@
             <p>Compare prices across top retailers and save big on laptops, smartphones, gaming gear, and accessories.</p>
             <div class="stats">
                 <div class="stat">
-                    <div class="number" id="statDeals">2,500+</div>
+                    <div class="number">2,500+</div>
                     <div class="label">Active Deals</div>
                 </div>
                 <div class="stat">
-                    <div class="number" id="statRetailers">50+</div>
+                    <div class="number">50+</div>
                     <div class="label">Retailers</div>
                 </div>
                 <div class="stat">
-                    <div class="number" id="statSavings">$2M+</div>
+                    <div class="number">$2M+</div>
                     <div class="label">User Savings</div>
                 </div>
             </div>
@@ -431,143 +323,186 @@
             <span>📢 Advertisement Space - Monetag Banner Ad (300x250)</span>
         </div>
 
-        <section class="categories">
-            <div class="cat-scroll" id="categoryScroll">
-                <button class="cat-btn active" data-cat="all">All Deals</button>
-                <button class="cat-btn" data-cat="laptops">Laptops</button>
-                <button class="cat-btn" data-cat="phones">Smartphones</button>
-                <button class="cat-btn" data-cat="gaming">Gaming</button>
-                <button class="cat-btn" data-cat="audio">Audio</button>
-                <button class="cat-btn" data-cat="accessories">Accessories</button>
-                <button class="cat-btn" data-cat="smart">Smart Home</button>
-                <button class="cat-btn" data-cat="cameras">Cameras</button>
-            </div>
-        </section>
-
         <section class="products-section">
             <div class="section-header">
-                <h2 id="sectionTitle">🔥 Hot Deals Right Now</h2>
-                <select class="sort-select" id="sortSelect">
-                    <option value="discount">Biggest Discount</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="rating">Highest Rated</option>
-                </select>
+                <h2>🔥 Hot Deals Right Now</h2>
             </div>
 
-            <div class="products-grid" id="productsGrid"></div>
-        </section>
+            <div class="products-grid">
+                <!-- PRODUCT 1 -->
+                <a href="https://amazon.com" target="_blank" class="product-card">
+                    <div class="product-image">
+                        <span>💻</span>
+                        <span class="discount-badge">-23%</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Laptops</div>
+                        <div class="product-title">MacBook Air M3 13-inch</div>
+                        <div class="product-meta">
+                            <span class="rating">★★★★★ 4.8</span>
+                            <span class="reviews">(2,847)</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">$999</span>
+                            <span class="original-price">$1,299</span>
+                            <span class="savings">Save $300</span>
+                        </div>
+                        <div class="retailers">
+                            <span class="retailer-tag">Amazon</span>
+                            <span class="retailer-tag">Apple</span>
+                            <span class="retailer-tag">Best Buy</span>
+                        </div>
+                        <div class="buy-btn">View Deal →</div>
+                    </div>
+                </a>
 
-        <!-- MONETAG AD - BOTTOM BANNER -->
-        <div class="ad-banner" id="ad-bottom">
-            <span>📢 Advertisement Space - Monetag Banner Ad (970x250)</span>
-        </div>
+                <!-- PRODUCT 2 -->
+                <a href="https://amazon.com" target="_blank" class="product-card">
+                    <div class="product-image">
+                        <span>📱</span>
+                        <span class="discount-badge">-21%</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Smartphones</div>
+                        <div class="product-title">iPhone 15 Pro Max 256GB</div>
+                        <div class="product-meta">
+                            <span class="rating">★★★★★ 4.9</span>
+                            <span class="reviews">(5,621)</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">$1,099</span>
+                            <span class="original-price">$1,399</span>
+                            <span class="savings">Save $300</span>
+                        </div>
+                        <div class="retailers">
+                            <span class="retailer-tag">Amazon</span>
+                            <span class="retailer-tag">Apple</span>
+                            <span class="retailer-tag">Verizon</span>
+                        </div>
+                        <div class="buy-btn">View Deal →</div>
+                    </div>
+                </a>
 
-        <section class="newsletter">
-            <h3>Never Miss a Deal</h3>
-            <p>Get the best tech deals delivered to your inbox daily. No spam, unsubscribe anytime.</p>
-            <form class="newsletter-form" onsubmit="handleSubscribe(event)">
-                <input type="email" placeholder="Enter your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </section>
-    </div>
+                <!-- PRODUCT 3 -->
+                <a href="https://amazon.com" target="_blank" class="product-card">
+                    <div class="product-image">
+                        <span>🎮</span>
+                        <span class="discount-badge">-18%</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Gaming</div>
+                        <div class="product-title">PlayStation 5 Slim Console</div>
+                        <div class="product-meta">
+                            <span class="rating">★★★★☆ 4.7</span>
+                            <span class="reviews">(8,934)</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">$449</span>
+                            <span class="original-price">$549</span>
+                            <span class="savings">Save $100</span>
+                        </div>
+                        <div class="retailers">
+                            <span class="retailer-tag">Amazon</span>
+                            <span class="retailer-tag">GameStop</span>
+                            <span class="retailer-tag">Target</span>
+                        </div>
+                        <div class="buy-btn">View Deal →</div>
+                    </div>
+                </a>
 
-        <footer>
-        <div class="links">
-            <a href="about.html">About</a>
-            <a href="about.html">How It Works</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms</a>
-            <a href="contact.html">Contact</a>
-        </div>
-            
-        <p>© 2026 TechDeals Hub. All deals are subject to availability. Prices may change.</p>
-        <p style="margin-top:10px; font-size:0.8rem; color:#475569;">TechDeals Hub participates in affiliate programs. We may earn commissions on purchases.</p>
-    </footer>
+                <!-- PRODUCT 4 -->
+                <a href="https://amazon.com" target="_blank" class="product-card">
+                    <div class="product-image">
+                        <span>🎧</span>
+                        <span class="discount-badge">-33%</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Audio</div>
+                        <div class="product-title">Sony WH-1000XM5 Headphones</div>
+                        <div class="product-meta">
+                            <span class="rating">★★★★☆ 4.6</span>
+                            <span class="reviews">(4,521)</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">$299</span>
+                            <span class="original-price">$449</span>
+                            <span class="savings">Save $150</span>
+                        </div>
+                        <div class="retailers">
+                            <span class="retailer-tag">Amazon</span>
+                            <span class="retailer-tag">Sony</span>
+                            <span class="retailer-tag">Best Buy</span>
+                        </div>
+                        <div class="buy-btn">View Deal →</div>
+                    </div>
+                </a>
 
-    <script>
-        // Product data
-        const products = [
-            {
-                id: 1, category: 'laptops', title: 'MacBook Air M3 13-inch', 
-                emoji: '💻', price: 999, original: 1299, rating: 4.8, reviews: 2847,
-                retailers: ['Amazon', 'Apple', 'Best Buy'],
-                affiliateLink: 'https://amazon.com'
-            },
-            {
-                id: 2, category: 'phones', title: 'iPhone 15 Pro Max 256GB',
-                emoji: '📱', price: 1099, original: 1399, rating: 4.9, reviews: 5621,
-                retailers: ['Amazon', 'Apple', 'Verizon'],
-                affiliateLink: 'https://amazon.com'
-            },
-            {
-                id: 3, category: 'gaming', title: 'PlayStation 5 Slim Console',
-                emoji: '🎮', price: 449, original: 549, rating: 4.7, reviews: 8934,
-                retailers: ['Amazon', 'GameStop', 'Target'],
-                affiliateLink: 'https://amazon.com'
-            },
-            {
-                id: 4, category: 'audio', title: 'Sony WH-1000XM5 Headphones',
-                emoji: '🎧', price: 299, original: 449, rating: 4.6, reviews: 4521,
-                retailers: ['Amazon', 'Sony', 'Best Buy'],
-                affiliateLink: 'https://amazon.com'
-            },
-            {
-                id: 5, category: 'laptops', title: 'Dell XPS 15 OLED',
-                emoji: '💻', price: 1399, original: 1899, rating: 4.5, reviews: 1234,
-                retailers: ['Amazon', 'Dell', 'Best Buy'],
-                affiliateLink: 'https://amazon.com'
-            },
-            {
-                id: 6, category: 'phones', title: 'Samsung Galaxy S24 Ultra',
-                emoji: '📱', price: 1049, original: 1349, rating: 4.7, reviews: 3421,
-                retailers: ['Amazon', 'Samsung', 'AT&T'],
-                affiliateLink: 'https://amazon.com'
-            },
-            {
-                id: 7, category: 'gaming', title: 'Nintendo Switch OLED',
-                emoji: '🎮', price: 299, original: 379, rating: 4.8, reviews: 10234,
-                retailers: ['Amazon', 'Nintendo', 'Target'],
-                affiliateLink: 'https://amazon.com'
-            },
-            {
-                id: 8, category: 'smart', title: 'Echo Dot 5th Gen (3-Pack)',
-                emoji: '🔊', price: 89, original: 149, rating: 4.4, reviews: 23456,
-                retailers: ['Amazon'],
-                affiliateLink: 'https://amazon.com'
-            },
-            {
-                id: 9, category: 'accessories', title: 'Anker 737 Power Bank 24000mAh',
-                emoji: '🔋', price: 89, original: 149, rating: 4.6, reviews: 8765,
-                retailers: ['Amazon', 'Anker'],
-                affiliateLink: 'https://amazon.com'
-            },
-            {
-                id: 10, category: 'cameras', title: 'Canon EOS R50 Mirrorless',
-                emoji: '📷', price: 599, original: 799, rating: 4.5, reviews: 987,
-                retailers: ['Amazon', 'Canon', 'B&H'],
-                affiliateLink: 'https://amazon.com'
-            },
-            {
-                id: 11, category: 'audio', title: 'AirPods Pro 2nd Gen',
-                emoji: '🎧', price: 199, original: 279, rating: 4.7, reviews: 15678,
-                retailers: ['Amazon', 'Apple', 'Best Buy'],
-                affiliateLink: 'https://amazon.com'
-            },
-            {
-                id: 12, category: 'laptops', title: 'ASUS ROG Zephyrus G14',
-                emoji: '💻', price: 1199, original: 1599, rating: 4.6, reviews: 2134,
-                retailers: ['Amazon', 'ASUS', 'Best Buy'],
-                affiliateLink: 'https://amazon.com'
-            }
-        ];
+                <!-- PRODUCT 5 -->
+                <a href="https://amazon.com" target="_blank" class="product-card">
+                    <div class="product-image">
+                        <span>💻</span>
+                        <span class="discount-badge">-26%</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Laptops</div>
+                        <div class="product-title">Dell XPS 15 OLED</div>
+                        <div class="product-meta">
+                            <span class="rating">★★★★☆ 4.5</span>
+                            <span class="reviews">(1,234)</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">$1,399</span>
+                            <span class="original-price">$1,899</span>
+                            <span class="savings">Save $500</span>
+                        </div>
+                        <div class="retailers">
+                            <span class="retailer-tag">Amazon</span>
+                            <span class="retailer-tag">Dell</span>
+                            <span class="retailer-tag">Best Buy</span>
+                        </div>
+                        <div class="buy-btn">View Deal →</div>
+                    </div>
+                </a>
 
-        let currentCategory = 'all';
-        let currentSort = 'discount';
-        let searchTerm = '';
+                <!-- PRODUCT 6 -->
+                <a href="https://amazon.com" target="_blank" class="product-card">
+                    <div class="product-image">
+                        <span>📱</span>
+                        <span class="discount-badge">-22%</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Smartphones</div>
+                        <div class="product-title">Samsung Galaxy S24 Ultra</div>
+                        <div class="product-meta">
+                            <span class="rating">★★★★☆ 4.7</span>
+                            <span class="reviews">(3,421)</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">$1,049</span>
+                            <span class="original-price">$1,349</span>
+                            <span class="savings">Save $300</span>
+                        </div>
+                        <div class="retailers">
+                            <span class="retailer-tag">Amazon</span>
+                            <span class="retailer-tag">Samsung</span>
+                            <span class="retailer-tag">AT&T</span>
+                        </div>
+                        <div class="buy-btn">View Deal →</div>
+                    </div>
+                </a>
 
-        function renderProducts() {
-            let filtered = products.filter(p => {
-                const matchesCat = currentCategory === 'all' || p.category === currentCategory;
-                const matchesSearch = p.title.toLowerCa
+                <!-- PRODUCT 7 -->
+                <a href="https://amazon.com" target="_blank" class="product-card">
+                    <div class="product-image">
+                        <span>🎮</span>
+                        <span class="discount-badge">-21%</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Gaming</div>
+                        <div class="product-title">Nintendo Switch OLED</div>
+                        <div class="product-meta">
+                            <span class="rating">★★★★★ 4.8</span>
+                            <span class="reviews">(10,234)</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-
